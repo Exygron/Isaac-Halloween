@@ -1,6 +1,8 @@
 package ProjetJeu;
 
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.Shape;
 
 import hevs.gdx2d.components.bitmaps.BitmapImage;
 import hevs.gdx2d.components.physics.PhysicsStaticBox;
@@ -24,6 +26,7 @@ public class Obstacle extends Fixe {
 		Vector2 position = new Vector2(x, y);
 		box = new PhysicsStaticBox("obstacle", position, width, height);
 		box.setBodyActive(false);
+		
 		obstacleImage0 = new BitmapImage("data/images/obstacle_citrouille.png");
 		obstacleImage1 = new BitmapImage("data/images/Obstacle_Tombe.png");
 		obstacleImage2 = new BitmapImage("data/images/Obstacle_Pierre.png");

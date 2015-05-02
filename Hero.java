@@ -5,6 +5,8 @@ import com.badlogic.gdx.math.Vector2;
 import hevs.gdx2d.components.bitmaps.Spritesheet;
 import hevs.gdx2d.components.physics.PhysicsBox;
 import hevs.gdx2d.lib.GdxGraphics;
+import hevs.gdx2d.lib.physics.AbstractPhysicsObject;
+import hevs.gdx2d.lib.utils.Logger;
 
 public class Hero extends Mobile {
 	protected double fSpeed = 1;
@@ -40,13 +42,10 @@ public class Hero extends Mobile {
 		
 		ss = new Spritesheet("data/images/SpriteSheetHero115x115.png",
 				SPRITE_WIDTH, SPRITE_HEIGHT);
+		
 
 	}
-
-	/*
-	 * public void changePoseX(int newPoseX) { this.x = newPoseX; } public void
-	 * changePoseY(int newPoseY) { this.y = newPoseY; }
-	 */
+	
 	public void recieveDamage(int nDamages) {
 		this.health -= nDamages;
 	}
@@ -68,8 +67,9 @@ public class Hero extends Mobile {
 
 		position = box.getBodyPosition();
 		Velocity = box.getBodyLinearVelocity();
+		
 
-		if (Velocity.x == VectorNull.x && Velocity.y == VectorNull.y) {
+		if (Velocity.x <1 && Velocity.x >-1 &&Velocity.y <1 && Velocity.y >-1) {
 			currentFrame = 6;
 		}
 		

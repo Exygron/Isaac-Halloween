@@ -25,32 +25,32 @@ public class Porte extends Fixe {
 		// TODO Auto-generated constructor stub
 
 		this.position = position;
-		open = false;
+		open = true;
 
-		if (position == "RIGHT") {
-			this.x = 100 + 12;
+		if (position == "LEFT") {
+			this.x = 100 + 3;
 			this.y = 870 / 2;
-			this.width = 24;
-			this.height = 100;
-		} else if (position == "LEFT") {
-			this.x = 1120 + 100 - 12;
+			this.width =6;
+			this.height = 50;
+		} else if (position == "RIGHT") {
+			this.x = 1120 + 100 - 3;
 			this.y = 870 / 2;
-			this.width = 24;
-			this.height = 100;
+			this.width = 6;
+			this.height = 50;
 		} else if (position == "UP") {
 			this.x = 1320 / 2;
-			this.y = 15 + 100 + 640 - 12;
-			this.width = 100;
-			this.height = 24;
+			this.y = 15 + 100 + 640 - 3;
+			this.width = 50;
+			this.height = 6;
 		} else if (position == "DOWN") {
 			this.x = 1320 / 2;
-			this.y = 15 + 100 + 12;
-			this.width = 100;
-			this.height = 24;
+			this.y = 15 + 100 + 3;
+			this.width = 50;
+			this.height = 6;
 		}
 		Vector2 positionVector = new Vector2(x, y);
 
-		box = new PhysicsStaticBox("Porte", positionVector, width, height);
+		box = new PhysicsStaticBox(position, positionVector, width, height);
 
 		box.setBodyActive(false);
 
@@ -67,6 +67,10 @@ public class Porte extends Fixe {
 
 	public String getPosition() {
 		return position;
+	}
+
+	public boolean getOpen() {
+		return open;
 	}
 
 	public void move() {

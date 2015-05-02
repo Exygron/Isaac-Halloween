@@ -1,9 +1,12 @@
 package ProjetJeu;
 
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Shape.Type;
+
 import hevs.gdx2d.lib.interfaces.DrawableObject;
 import hevs.gdx2d.lib.physics.AbstractPhysicsObject;
 
-public abstract class Objet implements DrawableObject {
+public abstract class Objet implements DrawableObject{
 
 	protected int x;
 	protected int y;
